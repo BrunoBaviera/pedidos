@@ -18,6 +18,7 @@ A aplicação é separada em 4 partes:
   
 - **Visualização de Produtos** - Listagem de todos os produtos cadastrados com paginação. É possível fazer a adição e edição de um produto através de um modal. A exclusão só é possível caso não exista nenhum pedido utilizando o produto.
 
-
+## Observação
+O nome de usuário e e-mail está fixo para cada pedido. 
 
 
