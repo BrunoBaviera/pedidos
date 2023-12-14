@@ -21,4 +21,26 @@ A aplicação é separada em 4 partes:
 ## Observação
 O nome de usuário e e-mail está fixo para cada pedido. 
 
+## Telas
+
+- Home
+<img src="https://github.com/BrunoBaviera/pedidos-front/assets/23465810/9123e1e7-70a7-4faf-b2ed-6ce59bb04722" width=70% height=70%>
+
+- Carrinho de Compras
+<img src="https://github.com/BrunoBaviera/pedidos-front/assets/23465810/358ed3a7-a50d-4d53-87b1-ddd7f4f3ef3b" width=70% height=70%>
+
+- Pedidos
+<img src="https://github.com/BrunoBaviera/pedidos-front/assets/23465810/650ca9c3-bd34-443d-9982-f879cb8e6185" width=70% height=70%>
+
+- Edição Pedido
+<img src="https://github.com/BrunoBaviera/pedidos-front/assets/23465810/344c62a5-cd08-4db0-b77b-e4ae5f1392c0" width=70% height=70%>
+
+- Produtos
+<img src="https://github.com/BrunoBaviera/pedidos-front/assets/23465810/e6c6f427-e6d4-4c0c-9c2c-0b459b7312ae" width=70% height=70%>
+
+- Novo Produto
+<img src="https://github.com/BrunoBaviera/pedidos-front/assets/23465810/e724b2b6-d1f0-4c4b-8936-2e43212be615" width=70% height=70%>
+
+
+
 
