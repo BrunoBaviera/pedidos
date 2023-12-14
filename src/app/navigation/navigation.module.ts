@@ -8,7 +8,6 @@ import { MatCardModule } from '@angular/material/card';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { RouterModule } from '@angular/router';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CartComponent } from './cart/cart.component';
 import { MatDialogModule } from '@angular/material/dialog';
 
@@ -25,7 +24,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatPaginatorModule,
     MatCardModule,
     RouterModule,
-    NgbModule,
     MatDialogModule
   ],
   exports: [
