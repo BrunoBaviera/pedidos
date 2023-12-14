@@ -1,27 +1,23 @@
 # Pedidos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
+Projeto desenvolvido com Angular v16.2.6 simulando um E-commerce.
 
-## Development server
+## Construído com
+- Componentes - Angular Material v16.2.12 
+- Estilização - Bootstrap v5.3.2, adicionado através de cdn no arquivo index.html
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Como funciona
 
-## Code scaffolding
+A aplicação é separada em 4 partes:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Compra de produtos** - Home - Listagem de produtos feito com paginação, onde é possível adicioná-los ao carrinho de compras.
+  
+- **Carrinho de compras** - Dialog localizada no menu que possuí um contador de produtos adicionados. Nela é possível criar um pedido, além de poder alterar a quantidade ou remover um produto escolhido antes de finalizá-lo.
+  
+- **Visualização de Pedidos** - Listagem de todos os pedidos feitos com paginação, onde é possível excluir ou alterar o pagamento de um pedido.
+  
+- **Visualização de Produtos** - Listagem de todos os produtos cadastrados com paginação. É possível fazer a adição e edição de um produto através de um modal. A exclusão só é possível caso não exista nenhum pedido utilizando o produto.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
