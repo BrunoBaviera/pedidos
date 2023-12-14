@@ -1,0 +1,42 @@
+<div class="container">
+  <h4 class="mt-2">Novo Produto</h4>
+  <hr />
+  <div class="alert alert-danger" *ngIf="errors.length > 0">
+    <h3 id="msgRetorno">Atenção!</h3>
+    <ul>
+      <li *ngFor="let error of errors">{{ error }}</li>
+    </ul>
+  </div>
+  <form enctype="multipart/form-data" (ngSubmit)="addProduto()" [formGroup]="formProduto">
+    <div class="form-row">
+      <div class="form-group col-md-8">
+        <label class="control-label">Nome</label>
+        <div>
+          <input class="form-control" id="nomeProduto" type="text" formControlName="nomeProduto" [ngClass]="{'is-invalid': displayMessage.nomeProduto }"/>
+          <app-field-error-display [displayError]="isFieldValid('nomeProduto', this.formProduto)"
+            errorMsg="{{ displayMessage.nomeProduto }}">
+          </app-field-error-display>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-5">
+        <label class="control-label">Valor</label>
+        <div>
+          <input class="form-control" id="valor" type="text" appFormatNumber="{decimalLimit: 2}" formControlName="valor" [ngClass]="{'is-invalid': displayMessage.valor }"/>
+          <app-field-error-display [displayError]="isFieldValid('valor', this.formProduto)"
+            errorMsg="{{ displayMessage.valor }}">
+          </app-field-error-display>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row mt-2 mb-2 text-end">
+      <div class="form-group">
+        <button type="button" class="btn btn-secondary me-1" mat-dialog-close>Voltar</button>
+        <button type="submit" class="btn btn-primary" cdkFocusInitial>Cadastrar</button>
+      </div>
+    </div>
+  </form>
+</div>

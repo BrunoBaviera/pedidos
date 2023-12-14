@@ -1,0 +1,46 @@
+<div class="container">
+  <h3>Editar Pedido</h3>
+  <hr />
+  <div class="alert alert-danger" *ngIf="errors.length > 0">
+    <h3 id="msgRetorno">Atenção!</h3>
+    <ul>
+      <li *ngFor="let error of errors">{{ error }}</li>
+    </ul>
+  </div>
+  <form enctype="multipart/form-data" (ngSubmit)="editarPedido()" [formGroup]="formPedido">
+
+    <div class="form-row">
+      <div class="form-group col-md-8">
+        <label class="control-label">Cliente</label>
+        <div>
+          <input class="form-control" id="nomeCliente" readonly type="text" formControlName="nomeCliente" />
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row mt-2">
+      <div class="form-group col-md-8">
+        <label class="control-label">Email</label>
+        <div>
+          <input class="form-control" id="emailCliente" readonly type="text" formControlName="emailCliente" />
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row mt-2">
+      <div class="form-group col-md-8 form-check">
+        <input class="form-check-input" type="checkbox" value="" id="checkPago" formControlName="pago">
+        <label class="form-check-label" for="checkPago">
+          Pago?
+        </label>
+      </div>
+    </div>
+
+    <div class="form-row mt-2 mb-2 text-end">
+      <div class="form-group">
+        <button type="button" class="btn btn-secondary me-1" (click)="fecharDialog()">Voltar</button>
+        <button type="submit" class="btn btn-primary" cdkFocusInitial>Editar</button>
+      </div>
+    </div>
+  </form>
+</div>

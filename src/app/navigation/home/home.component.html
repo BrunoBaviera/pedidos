@@ -1,0 +1,20 @@
+<div class="row" >
+  <div *ngIf="produtos.length <= 0">Nenhum produto cadastrado.</div>
+  <div class="col-sm-3 mb-2" *ngFor="let produto of produtos">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title text-truncate">{{produto.nomeProduto}}</h5>
+        <p class="card-text">R$ {{ produto.valor | number : "1.2-2" }}</p>
+        <a href="javascript:void(0)" (click)="addCart(produto)" class="btn btn-primary">Adicionar ao Carrinho</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<mat-paginator [length]="totalRegistros"
+              [pageSize]="tamanhoPagina"
+              [pageIndex]="paginaAtual"
+              [hidePageSize]="false"
+              (page)="handlePageEvent($event)"
+              aria-label="Select page">
+</mat-paginator>

@@ -1,0 +1,66 @@
+<div class="container">
+  <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
+    <ng-container matColumnDef="nomeCliente">
+      <th mat-header-cell *matHeaderCellDef> Cliente </th>
+      <td mat-cell *matCellDef="let pedido"> {{pedido.nomeCliente}} </td>
+    </ng-container>
+    <ng-container matColumnDef="emailCliente">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let pedido"> {{pedido.emailCliente}} </td>
+    </ng-container>
+    <ng-container matColumnDef="pago">
+      <th mat-header-cell *matHeaderCellDef> Pago </th>
+      <td mat-cell *matCellDef="let pedido"> {{true == pedido.pago ? 'Sim' : 'Não' }}</td>
+    </ng-container>
+    <ng-container matColumnDef="valorTotal">
+      <th mat-header-cell *matHeaderCellDef> Valor Total </th>
+      <td mat-cell *matCellDef="let pedido"> R$ {{ pedido.valorTotal | number : "1.2-2" }}</td>
+    </ng-container>
+    <ng-container matColumnDef="acao">
+      <th mat-header-cell *matHeaderCellDef> Ação </th>
+      <td mat-cell *matCellDef="let pedido">
+        <button (click)="openDialogEdicao($event, pedido)" class="btn btn-primary me-1">Editar</button>
+        <button type="button" (click)="remover($event, pedido)" class="btn btn-danger">Remover</button></td>
+    </ng-container>
+    <ng-container matColumnDef="expand">
+      <th mat-header-cell *matHeaderCellDef aria-label="row actions">&nbsp;</th>
+      <td mat-cell *matCellDef="let pedido">
+        <button mat-icon-button aria-label="expand row" (click)="(expandedElement = expandedElement === pedido ? null : pedido); $event.stopPropagation()">
+          <mat-icon *ngIf="expandedElement !== pedido">keyboard_arrow_down</mat-icon>
+          <mat-icon *ngIf="expandedElement === pedido">keyboard_arrow_up</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="expandedDetail">
+      <td mat-cell *matCellDef="let pedido" [attr.colspan]="columnsToDisplayWithExpand.length">
+        <div class="pedido-detail d-flex flex-column"
+        [@detailExpand]="pedido == expandedElement ? 'expanded' : 'collapsed'">
+        <hr>
+        <ng-container *ngFor="let itemPedido of pedido.itensPedido">
+            <p><strong>Produto:</strong> {{itemPedido.nomeProduto}}</p>
+            <p><strong>Quantidade:</strong> {{itemPedido.quantidade}}</p>
+            <p><strong>Valor:</strong> R$ {{ itemPedido.valorUnitario | number : "1.2-2" }}</p>
+          <hr>
+        </ng-container>
+      </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplayWithExpand"></tr>
+    <tr mat-row *matRowDef="let pedido; columns: columnsToDisplayWithExpand;"
+        class="pedido-row"
+        [class.expanded-row]="expandedElement === pedido"
+        (click)="expandedElement = expandedElement === pedido ? null : pedido">
+    </tr>
+    <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="detail-row"></tr>
+
+    <mat-paginator [length]="totalRegistros"
+                [pageSize]="tamanhoPagina"
+                [pageIndex]="paginaAtual"
+                [hidePageSize]="false"
+                (page)="handlePageEvent($event)"
+                aria-label="Select page">
+    </mat-paginator>
+  </table>
+</div>

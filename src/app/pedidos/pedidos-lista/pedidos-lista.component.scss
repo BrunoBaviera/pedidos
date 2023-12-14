@@ -1,0 +1,23 @@
+table {
+  width: 100%;
+}
+
+tr.detail-row {
+  height: 0;
+}
+
+tr.pedido-row:not(.expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.pedido-row:not(.expanded-row):active {
+  background: #efefef;
+}
+
+.pedido-row td {
+  border-bottom-width: 0;
+}
+
+.pedido-detail {
+  overflow: hidden;
+}
